@@ -1,0 +1,113 @@
+.liveCard {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  width: 100%;
+  padding: 16px;
+  gap: 20px;
+  border-radius: 16px;
+  border: 1px solid #DEE0E3;
+  background: #FFF;
+  box-shadow: 0px 1px 2px 0px rgba(20, 21, 26, 0.05);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.badgeEnter {
+  display: flex;
+  padding: 2px 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  border-radius: 999px;
+  border: 1px solid rgba(10, 15, 41, 0.08);
+  background: rgba(16, 185, 129, 0.10);
+
+  color: #10B981;
+  text-align: center;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+.badgeExit {
+  display: flex;
+  padding: 2px 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  border-radius: 999px;
+  border: 1px solid rgba(10, 15, 41, 0.08);
+  background: #FDEAD8;
+
+  color: #AE590A;
+  text-align: center;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.personName {
+  color: #14151A;
+
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.3px;
+}
+
+.personLocation {
+  color: rgba(15, 19, 36, 0.60);
+
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
+.detailsButton {
+  display: flex;
+  padding: 6px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  border-radius: 10px;
+  border: 1px solid #DEE0E3;
+  background: #FFF;
+
+  box-shadow: 0px 1px 2px 0px rgba(20, 21, 26, 0.05);
+
+  color: #14151A;
+  text-align: center;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+  cursor: pointer;
+}

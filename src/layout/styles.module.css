@@ -1,0 +1,131 @@
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  gap: 16px;
+  padding: 8px 0px;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  padding: 6px 16px;
+  align-items: center;
+  gap: 4px;
+}
+
+.logoContainer {
+  display: flex;
+  padding: 4px 8px;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.00);
+}
+
+
+.logoText {
+  display: flex;
+  padding: 0 4px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;
+  flex: 1 0 0;
+
+  color: #14151A;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}
+
+.navSection {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  display: flex;
+  padding: 6px 16px;
+  align-items: center;
+  gap: 0px;
+  align-self: stretch;
+
+  color: rgba(15, 19, 36, 0.60);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0px;
+}
+
+.navItemOuter {
+  display: flex;
+  padding: 2px 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0px;
+  align-self: stretch;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  color: #14151A;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.navItemInner {
+  display: flex;
+  padding: 6px 8px;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+  width: 100%;
+}
+
+.navItemInner:hover {
+  border-radius: 10px;
+  background: rgba(10, 15, 41, 0.04);
+}
+
+.navItemActive .navItemInner {
+  border-radius: 10px;
+  background: rgba(10, 15, 41, 0.04);
+  font-weight: 500;
+}
+
+.navIcon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navText {
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+
+  color: #14151A;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.1px;
+}

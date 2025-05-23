@@ -1,0 +1,16 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  padding: 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  flex: 1 0 0;
+  align-self: stretch;
+  background: #FFF;
+  margin-left: 280px; 
+}

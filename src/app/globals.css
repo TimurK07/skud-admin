@@ -1,14 +1,10 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F7F7F8;
+  --text-color: #14151A;
+  --secondary-color: rgba(15, 19, 36, 0.60);
+  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 html,
 body {
@@ -35,8 +31,3 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
