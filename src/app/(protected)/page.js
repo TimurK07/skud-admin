@@ -52,7 +52,8 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const socket = io(process.env.NEXT_PUBLIC_API_URL || 'https://thehonley.org', {
+    const socket = io('/', {
+      path: '/api/socket.io',
       transports: ['websocket'],
     });
 

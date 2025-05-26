@@ -1,5 +1,5 @@
 export const fetchApi = async (endpoint, options = {}) => {
-  const url = `${process.env.NEXT_PUBLIC_API_URL}${endpoint}`;
+  const url = `${endpoint}`;
   
   const headers = {
     'Content-Type': 'application/json',
