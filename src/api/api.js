@@ -22,7 +22,7 @@ export const fetchApi = async (endpoint, options = {}) => {
     const data = await response.json();
     
     if (!response.ok) {
-      throw new Error(data.data?.message || 'Ошибка запроса');
+      throw new Error((data.data && data.data.message) || 'Ошибка запроса');
     }
     
     return data;

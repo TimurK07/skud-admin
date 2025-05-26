@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -11,9 +11,9 @@ const navItems = [
   { id: 'students', name: 'Студенты', icon: '/assets/icons/sidebar/user.svg', path: '/students' },
   { id: 'staff', name: 'Сотрудники', icon: '/assets/icons/sidebar/user.svg', path: '/staff' },
   { id: 'guests', name: 'Гости', icon: '/assets/icons/sidebar/user.svg', path: '/guests' },
-  { id: 'analytics', name: 'Аналитика', icon: '/assets/icons/sidebar/analytics.svg', path: '/analytics' },
-  { id: 'buildings', name: 'Корпуса', icon: '/assets/icons/sidebar/hull.svg', path: '/buildings' },
-  { id: ' ', name: 'Группы', icon: '/assets/icons/sidebar/users.svg', path: '/groups' },
+  { id: 'terminals', name: 'Терминалы', icon: '/assets/icons/sidebar/terminal.svg', path: '/terminals' },
+  // { id: 'buildings', name: 'Корпуса', icon: '/assets/icons/sidebar/hull.svg', path: '/buildings' },
+  { id: 'groups', name: 'Группы', icon: '/assets/icons/sidebar/users.svg', path: '/groups' },
 ];
 
 const adminItems = [
@@ -23,13 +23,50 @@ const adminItems = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isActive = (path) => {
     return pathname === path;
   };
+  
+  // Закрываем меню при изменении пути (переходе по ссылке)
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+  
+  // Закрываем меню при клике вне меню на мобильных устройствах
+  const handleOverlayClick = () => {
+    setIsMenuOpen(false);
+  };
+  
+  // Переключение состояния меню
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <div className={styles.sidebar}>
+    <>
+      {/* Бургер-кнопка для мобильных устройств */}
+      <button 
+        className={`${styles.hamburger} ${isMenuOpen ? styles.hamburgerActive : ''}`} 
+        onClick={toggleMenu}
+        aria-label="Меню"
+      >
+        <Image 
+          src={isMenuOpen ? '/assets/icons/close.svg' : '/assets/icons/menu.svg'} 
+          width={24} 
+          height={24} 
+          alt={isMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
+        />
+      </button>
+      
+      {/* Затемняющий оверлей при открытом меню */}
+      <div 
+        className={`${styles.overlay} ${isMenuOpen ? styles.overlayActive : ''}`}
+        onClick={handleOverlayClick}
+      ></div>
+      
+      <div className={`${styles.sidebar} ${isMenuOpen ? styles.sidebarOpen : ''}`}>
       <div className={styles.logo}>
         <div className={styles.logoContainer}>
           <div className={styles.logoIcon}>
@@ -62,7 +99,7 @@ export default function Sidebar() {
           ))}
         </div>
 
-        <div className={styles.navSection}>
+        {/* <div className={styles.navSection}>
           <div className={styles.sectionTitle}>Главный корпус:</div>
           {adminItems.map((item) => (
             <div key={item.id} className={styles.navItemOuter}>
@@ -83,8 +120,9 @@ export default function Sidebar() {
               </Link>
             </div>
           ))}
-        </div>
+        </div> */}
       </nav>
     </div>
+    </>
   );
 }

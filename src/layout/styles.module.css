@@ -9,6 +9,63 @@
   gap: 16px;
   padding: 8px 0px;
   flex-shrink: 0;
+  background-color: #fff;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  border-right: 1px solid #DEE0E3;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+}
+
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Стили для иконки бургер-меню удалены, так как теперь используются SVG-иконки */
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .overlayActive {
+    display: block;
+  }
 }
 
 .logo {

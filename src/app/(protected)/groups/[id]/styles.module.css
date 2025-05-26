@@ -1,0 +1,275 @@
+.container {
+  padding: 24px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 12px;
+  }
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #F3F4F6;
+  color: #111827;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background-color: #E5E7EB;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #14151A;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+}
+
+.infoCard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .infoCard {
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoCard {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+}
+
+.infoRow {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+  .infoRow {
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+}
+
+.infoRow:last-child {
+  margin-bottom: 0;
+}
+
+.infoLabel {
+  width: 200px;
+  font-weight: 500;
+  color: #6B7280;
+}
+
+@media (max-width: 768px) {
+  .infoLabel {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoLabel {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+}
+
+.infoValue {
+  flex: 1;
+  color: #111827;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #14151A;
+  margin: 24px 0 16px 0;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 16px;
+    margin: 20px 0 14px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 15px;
+    margin: 16px 0 12px 0;
+  }
+}
+
+.idColumn {
+  width: 180px;
+  min-width: 180px;
+}
+
+@media (max-width: 768px) {
+  .idColumn {
+    width: 120px;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .idColumn {
+    width: 80px;
+    min-width: 80px;
+  }
+}
+
+.nameColumn {
+  min-width: 200px;
+  width: 30%;
+}
+
+@media (max-width: 768px) {
+  .nameColumn {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nameColumn {
+    min-width: 120px;
+  }
+}
+
+.iinColumn {
+  min-width: 150px;
+  width: 15%;
+}
+
+@media (max-width: 768px) {
+  .iinColumn {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .iinColumn {
+    min-width: 100px;
+  }
+}
+
+.phoneColumn {
+  min-width: 150px;
+  width: 15%;
+}
+
+@media (max-width: 768px) {
+  .phoneColumn {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .phoneColumn {
+    min-width: 100px;
+  }
+}
+
+.emailColumn {
+  min-width: 200px;
+  width: 20%;
+}
+
+@media (max-width: 768px) {
+  .emailColumn {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .emailColumn {
+    min-width: 120px;
+  }
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #6B7280;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 16px;
+  color: #6B7280;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 16px;
+  color: #EF4444;
+  text-align: center;
+  margin-bottom: 16px;
+}

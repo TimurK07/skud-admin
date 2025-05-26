@@ -33,7 +33,7 @@ export default function Table({
         return false;
       });
     }
-    
+
     // Ищем по указанным ключам
     return searchKeys.some(key => {
       const value = item[key];
@@ -44,7 +44,7 @@ export default function Table({
       return false;
     });
   };
-  
+
   // Поиск внутри объекта
   const searchInObject = (obj, term) => {
     if (!obj) return false;
@@ -61,7 +61,7 @@ export default function Table({
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
-    
+
     // Если используется серверный поиск, вызываем обработчик немедленно
     if (serverSideSearch && onSearch) {
       onSearch(value);
@@ -75,7 +75,7 @@ export default function Table({
       setFilteredData(data);
       return;
     }
-    
+
     // Клиентский поиск
     if (searchable && searchTerm) {
       const filtered = data.filter(item => searchInItem(item, searchTerm));
@@ -104,77 +104,79 @@ export default function Table({
   };
 
   return (
-    <div className={styles.tableWrapper}>
-      {searchable && (
-        <div className={styles.searchContainer}>
-          <input
-            type="text"
-            placeholder={searchPlaceholder}
-            className={styles.searchInput}
-            value={searchTerm}
-            onChange={handleSearchChange}
-          />
-          {loading && <div className={styles.searchSpinner}></div>}
-        </div>
-      )}
-      
-      <div className={styles.tableContainer}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              {selectable && (
-                <th className={styles.checkboxColumn}>
-                  <input 
-                    type="checkbox" 
-                    checked={selectedItems.length === filteredData.length && filteredData.length > 0}
-                    onChange={handleSelectAll}
-                  />
-                </th>
-              )}
-              {columns.map((column) => (
-                <th key={column.key} className={column.className}>{column.title}</th>
-              ))}
-              {actionRenderer && <th></th>}
-            </tr>
-          </thead>
-          <tbody>
-            {filteredData.length > 0 ? (
-              filteredData.map((item, index) => (
-                <tr 
-                  key={item.id ? `row-${item.id}` : `row-index-${index}`} 
-                  onClick={() => onRowClick && onRowClick(item)}
-                  className={onRowClick ? styles.clickableRow : ''}
-                >
-                  {selectable && (
-                    <td className={styles.checkboxColumn} onClick={(e) => e.stopPropagation()}>
-                      <input 
-                        type="checkbox" 
-                        checked={selectedItems.includes(item.id)}
-                        onChange={() => handleSelectItem(item.id)}
-                      />
-                    </td>
-                  )}
-                  {columns.map((column, colIndex) => (
-                    <td key={item.id ? `${item.id}-${column.key}` : `cell-${index}-${colIndex}`} className={column.cellClassName}>
-                      {column.render ? column.render(item) : (item[column.key] !== undefined && typeof item[column.key] !== 'object' ? item[column.key] : '—')}
-                    </td>
-                  ))}
-                  {actionRenderer && (
-                    <td className={styles.actionColumn} onClick={(e) => e.stopPropagation()}>
-                      {actionRenderer(item)}
-                    </td>
-                  )}
-                </tr>
-              ))
-            ) : (
-              <tr key="no-data-row">
-                <td colSpan={columns.length + (selectable ? 1 : 0) + (actionRenderer ? 1 : 0)} className={styles.emptyMessage}>
-                  {emptyMessage}
-                </td>
+    <div className={styles.tableScrollWrapper}>
+      <div className={styles.tableWrapper}>
+        {searchable && (
+          <div className={styles.searchContainer}>
+            <input
+              type="text"
+              placeholder={searchPlaceholder}
+              className={styles.searchInput}
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+            {loading && <div className={styles.searchSpinner}></div>}
+          </div>
+        )}
+
+        <div className={styles.tableContainer}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                {selectable && (
+                  <th className={styles.checkboxColumn}>
+                    <input
+                      type="checkbox"
+                      checked={selectedItems.length === filteredData.length && filteredData.length > 0}
+                      onChange={handleSelectAll}
+                    />
+                  </th>
+                )}
+                {columns.map((column) => (
+                  <th key={column.key} className={column.className}>{column.title}</th>
+                ))}
+                {actionRenderer && <th></th>}
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredData.length > 0 ? (
+                filteredData.map((item, index) => (
+                  <tr
+                    key={item.id ? `row-${item.id}` : `row-index-${index}`}
+                    onClick={() => onRowClick && onRowClick(item)}
+                    className={onRowClick ? styles.clickableRow : ''}
+                  >
+                    {selectable && (
+                      <td className={styles.checkboxColumn} onClick={(e) => e.stopPropagation()}>
+                        <input
+                          type="checkbox"
+                          checked={selectedItems.includes(item.id)}
+                          onChange={() => handleSelectItem(item.id)}
+                        />
+                      </td>
+                    )}
+                    {columns.map((column, colIndex) => (
+                      <td key={item.id ? `${item.id}-${column.key}` : `cell-${index}-${colIndex}`} className={column.cellClassName}>
+                        {column.render ? column.render(item) : (item[column.key] !== undefined && typeof item[column.key] !== 'object' ? item[column.key] : '—')}
+                      </td>
+                    ))}
+                    {actionRenderer && (
+                      <td className={styles.actionColumn} onClick={(e) => e.stopPropagation()}>
+                        {actionRenderer(item)}
+                      </td>
+                    )}
+                  </tr>
+                ))
+              ) : (
+                <tr key="no-data-row">
+                  <td colSpan={columns.length + (selectable ? 1 : 0) + (actionRenderer ? 1 : 0)} className={styles.emptyMessage}>
+                    {emptyMessage}
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

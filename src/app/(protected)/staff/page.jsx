@@ -1,12 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Table from '../../../components/Table/Table';
 import { getUsers } from '../../../api/users';
 import styles from './styles.module.css';
 
 export default function StaffPage() {
+    const router = useRouter();
     const [staff, setStaff] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -149,8 +151,7 @@ export default function StaffPage() {
     // Обработчик клика по строке таблицы
     const handleRowClick = (staff) => {
         console.log('Выбран сотрудник:', staff);
-        // Здесь можно добавить навигацию на страницу сотрудника
-        // Пример: router.push(`/staff/${staff.id}`);
+        router.push(`/staff/${staff.id}`);
     };
 
 
@@ -158,12 +159,12 @@ export default function StaffPage() {
         <div className={styles.container}>
             <div className={styles.header}>
                 <h1 className={styles.title}>Сотрудники</h1>
-                <button className={styles.addButton}>
+                {/* <button className={styles.addButton}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M7.33337 7.33334V3.33334H8.66671V7.33334H12.6667V8.66667H8.66671V12.6667H7.33337V8.66667H3.33337V7.33334H7.33337Z" fill="white" />
                     </svg>
                     Добавить
-                </button>
+                </button> */}
             </div>
 
             <Table
@@ -171,7 +172,7 @@ export default function StaffPage() {
                 data={staff}
                 selectable={true}
                 onRowClick={handleRowClick}
-                actionRenderer={actionRenderer}
+                // actionRenderer={actionRenderer}
                 searchable={true}
                 searchPlaceholder="Поиск"
                 onSearch={handleSearch} 

@@ -46,7 +46,16 @@ export const getGuests = async ({ page = 1, limit = 10, q = '' } = {}) => {
   return result;
 };
 
+export const getUserById = async (id) => {
+  if (!id) {
+    throw new Error('ID пользователя не указан');
+  }
+  
+  return fetchApi(`/api/users/${id}`);
+};
+
 export default {
+  getUserById,
   getUsers,
   getStudents,
   getStaff,

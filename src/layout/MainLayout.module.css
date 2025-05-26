@@ -12,5 +12,14 @@
   flex: 1 0 0;
   align-self: stretch;
   background: #FFF;
-  margin-left: 280px; 
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    padding: 24px 16px;
+    padding-top: 60px; /* Добавляем отступ сверху для бургер-кнопки */
+  }
 }

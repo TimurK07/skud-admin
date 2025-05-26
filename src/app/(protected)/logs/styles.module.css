@@ -1,7 +1,6 @@
 .liveCard {
   display: flex;
   flex-direction: column;
-  min-width: 220px;
   width: 100%;
   padding: 16px;
   gap: 20px;
@@ -9,12 +8,29 @@
   border: 1px solid #DEE0E3;
   background: #FFF;
   box-shadow: 0px 1px 2px 0px rgba(20, 21, 26, 0.05);
+  box-sizing: border-box;
+}
+
+@media (max-width: 550px) {
+  .liveCard {
+    padding: 12px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .liveCard {
+    padding: 10px;
+    gap: 12px;
+  }
 }
 
 .cardHeader {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   margin-bottom: 4px;
+  width: 100%;
 }
 
 .badgeEnter {
@@ -61,6 +77,43 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.cardDate {
+  color: rgba(15, 19, 36, 0.60);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.personInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.personGroup {
+  color: rgba(15, 19, 36, 0.60);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding-right: 8px;
+  border-right: 1px solid rgba(15, 19, 36, 0.20);
+}
+
+.accessResult {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.accessSuccess {
+  color: #10B981;
+}
+
+.accessDenied {
+  color: #EF4444;
 }
 
 .personName {

@@ -35,6 +35,13 @@
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .statsRow {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
 
 .analyticsContainer {
   display: flex;
@@ -55,4 +62,28 @@
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 24px;
   width: 100%;
+}
+
+.noData {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 24px;
+  background: #F9FAFB;
+  border-radius: 8px;
+  color: #6B7280;
+  font-size: 16px;
+}
+
+@media (max-width: 550px) {
+  .liveRow {
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .liveRow {
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
 }
