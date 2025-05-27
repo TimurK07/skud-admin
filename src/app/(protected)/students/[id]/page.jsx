@@ -89,7 +89,7 @@ export default function StudentDetailsPage({ params }) {
                     <div className={styles.photoContainer}>
                         {student.photoUrl ? (
                             <Image
-                                src={`https://kitvision.danya.tech:3003/${student.photoUrl}`}
+                                src={`https://kitvision.danya.tech:3003${student.photoUrl}`}
                                 alt={student.name}
                                 width={200}
                                 height={200}
