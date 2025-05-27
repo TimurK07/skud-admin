@@ -89,7 +89,7 @@ export default function StaffDetailsPage({ params }) {
                     <div className={styles.photoContainer}>
                         {staff.photoUrl ? (
                             <Image
-                                src={`http://192.168.10.13:3003${staff.photoUrl}`}
+                                src={`https://kitvision.danya.tech:3003/${staff.photoUrl}`}
                                 alt={staff.name}
                                 width={200}
                                 height={200}

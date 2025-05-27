@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: '192.168.10.13',
+        protocol: 'https',
+        hostname: 'kitvision.danya.tech:3003',
         port: '3003',
         pathname: '/**',
       },

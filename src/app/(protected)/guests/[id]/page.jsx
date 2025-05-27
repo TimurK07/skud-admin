@@ -89,7 +89,7 @@ export default function GuestDetailsPage({ params }) {
                     <div className={styles.photoContainer}>
                         {guest.photoUrl ? (
                             <Image
-                                src={`http://192.168.10.13:3003${guest.photoUrl}`}
+                                src={`https://kitvision.danya.tech:3003/${guest.photoUrl}`}
                                 alt={guest.name}
                                 width={200}
                                 height={200}
