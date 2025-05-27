@@ -31,6 +31,7 @@ RUN mkdir -p .next && chown -R node:node .next
 # Копируем зависимости и сборку
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/.next ./.next
+COPY --from=build /usr/src/app/public ./public
 COPY package.json .
 
 
