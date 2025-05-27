@@ -174,7 +174,7 @@ export default function LogDetailsPage() {
             <div className={styles.photoContainer}>
               <div className={styles.photoLabel}>Снимок:</div>
               <Image
-                src={`https://kitvision.danya.tech:3003/${log.payload.snapshot}`}
+                src={`https://kitvision.danya.tech:3003${log.payload.snapshot}`}
                 alt="Снимок события"
                 width={400}
                 height={300}
